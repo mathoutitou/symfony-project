@@ -41,6 +41,13 @@ class Article
      */
     private $published;
 
+    public function __construct()
+    {
+        $this->creation = new \DateTime();
+        $this->lastUpdate = new \DateTime();
+        $this->published = false;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

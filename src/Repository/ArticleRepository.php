@@ -19,6 +19,25 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
+    public function findLatest(int $number): array
+    {
+//        return $this->findBy(
+//            ['published' => true],
+//            ['creation' => 'desc'],
+//            $number
+//        );
+
+        $builder = $this->createQueryBuilder('article');
+
+        return $builder
+            ->where($builder->expr()->eq('article.published', true))
+            ->orderBy('article.creation', 'DESC')
+            ->setMaxResults($number)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */

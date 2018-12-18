@@ -1,0 +1,14 @@
+*{
+    background-color: #142742;
+    color: white;
+}
+
+body{
+    text-align: center;
+}
+
+.article{
+    border: 1em solid white;
+    margin: 5em 40em;
+    padding: 3em;
+}

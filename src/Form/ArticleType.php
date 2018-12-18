@@ -17,6 +17,9 @@ class ArticleType extends AbstractType
             ->add('title')
             ->add('body', TextareaType::class)
             ->add('published', CheckboxType::class)
+            ->add('author', null, [
+                'choice_label' => 'name'
+            ])
         ;
     }
 

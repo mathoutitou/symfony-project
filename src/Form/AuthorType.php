@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Author;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,8 +14,16 @@ class AuthorType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('job')
-            ->add('birth')
+            ->add('job', ChoiceType::class, [
+                'choices' => [
+                    'Editeur' => 'editor',
+                    'Contributeur' => 'contributor',
+                    'freelance' => 'freelance',
+                ],
+            ])
+            ->add('birth', null, [
+                'widget' => 'single_text',
+            ])
         ;
     }
 

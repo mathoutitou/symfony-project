@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AuthorController extends AbstractController
 {
     /**
-     * @Route("/", name="author_index", methods={"GET"})
+     * @Route("/author", name="author_index", methods={"GET"})
      */
     public function index(AuthorRepository $authorRepository): Response
     {
@@ -24,7 +24,7 @@ class AuthorController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="author_new", methods={"GET","POST"})
+     * @Route("/admin/new", name="author_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -47,7 +47,7 @@ class AuthorController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="author_show", methods={"GET"})
+     * @Route("/author/{id}", name="author_show", methods={"GET"})
      */
     public function show(Author $author): Response
     {
@@ -55,7 +55,7 @@ class AuthorController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="author_edit", methods={"GET","POST"})
+     * @Route("/admin/author/{id}/edit", name="author_edit", methods={"GET","PUT"})
      */
     public function edit(Request $request, Author $author): Response
     {
@@ -75,7 +75,7 @@ class AuthorController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="author_delete", methods={"DELETE"})
+     * @Route("/admin/author/{id}", name="author_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Author $author): Response
     {

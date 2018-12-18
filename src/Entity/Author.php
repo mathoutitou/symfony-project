@@ -29,7 +29,7 @@ class Author
     private $job;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $birth;
 

@@ -41,6 +41,12 @@ class Article
      */
     private $published;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
+
     public function __construct()
     {
         $this->creation = new \DateTime();
@@ -109,6 +115,18 @@ class Article
     public function setPublished(bool $published): self
     {
         $this->published = $published;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?Author
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?Author $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }

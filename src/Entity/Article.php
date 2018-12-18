@@ -43,7 +43,6 @@ class Article
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="articles")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $author;
 

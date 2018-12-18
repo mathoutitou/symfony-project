@@ -1,0 +1,43 @@
+home:
+  index:
+    head-title: UnfakeNews
+    title: Bienvenue sur UnfakeNews !
+    lien1: Voir les articles du jour
+    lien2: Ajouter un article
+
+article:
+  index:
+    maj: dernière mise à jour
+
+  show:
+    edit: Editer l'article
+
+author:
+  index:
+    head-title: Author index
+    title: Author index
+    id: Id
+    name: Name
+    job: Job
+    birth: Birth
+    actions: Actions
+    else: No records found
+    new: Create new
+
+  show:
+    head-title: Author
+    title: Author
+    id: Id
+    name: Name
+    job: Job
+    birth: Birth
+    index: Retour à la liste
+    edit: Editer
+
+  new:
+
+  edit:
+
+  _form:
+
+  _delete_form:

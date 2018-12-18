@@ -1,14 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}UnfakeNews{% endblock %}
+{% block title %}{{ 'home.head-title' | trans }}{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>Bienvenue sur UnfakeNews !</h1>
+    <div class="example-wrapper">
+        <h1>{{ 'home.index.title' | trans }}</h1>
+        <div>
+            <a href="{{ path('article') }}">
+                {{ 'home.index.lien1' | trans }}
+            </a>
+        </div>
+        <div>
+            <a href="{{ path('article_new') }}">
+                {{ 'home.index.lien2' | trans }}
+            </a>
+        </div>
 
-    <a href="{{ path('article') }}">Voir les articles du jour</a>
-    <a href="{{ path('article_new') }}">Ajouter un article</a>
 
-</div>
+
+    </div>
 
 {% endblock %}

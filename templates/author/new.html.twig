@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Author{% endblock %}
+{% block title %}{{ 'author.new.head-title' | trans }}{% endblock %}
 
 {% block body %}
-    <h1>Create new Author</h1>
+    <h1>
+        {{ 'author.new.title' | trans }}
+    </h1>
 
     {{ include('author/_form.html.twig') }}
 
-    <a href="{{ path('author_index') }}">back to list</a>
+    <a href="{{ path('author_index') }}">
+        {{ 'author.new.return' | trans }}
+    </a>
 {% endblock %}

@@ -1,11 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}{{ 'article.create.head-title' | trans }}{% endblock %}
 
 {% block body %}
 
     {{ form_start(create_form) }}
     {{ form_widget(create_form) }}
-    <input type="submit" value="Enregistrer">
+    <div>
+        <a href="{{ path('author_new') }}">
+            {{ 'article.create.add' | trans }}
+        </a>
+    </div>
+
+    <input type="submit" value="{{ 'article.create.save' | trans }}">
+
     {{ form_end(create_form) }}
 {% endblock %}

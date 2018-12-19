@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}{{ 'home.head-title' | trans }}{% endblock %}</title>
-        {% block stylesheets %}<link rel="stylesheet" href="{{ asset('style.css') }}">{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ 'home.index.head-title' | trans }}{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('style.css') }}">{% endblock %}
+</head>
+<body>
+<nav>
+    <a href="{{ path('home') }}">Accueil</a>
+    <a href="{{ path('article') }}">Articles</a>
+    <a href="{{ path('author_index') }}">Auteurs</a>
+</nav>
+
+{% for category, messages in app.flashes %}
+    {% for message in messages %}
+        <p class="flash--{{ category }}">{{ message }}</p>
+
+    {% endfor %}
+{% endfor %}
+
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
 </html>

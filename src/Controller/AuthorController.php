@@ -10,13 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/author")
- */
+
 class AuthorController extends AbstractController
 {
     /**
      * @Route("/author", name="author_index", methods={"GET"})
+     * @param AuthorRepository $authorRepository
+     * @return Response
      */
     public function index(AuthorRepository $authorRepository): Response
     {
@@ -25,6 +25,8 @@ class AuthorController extends AbstractController
 
     /**
      * @Route("/admin/new", name="author_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {

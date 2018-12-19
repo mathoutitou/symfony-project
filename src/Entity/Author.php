@@ -65,6 +65,10 @@ class Author
         return $this->job;
     }
 
+    public static function getJobChoices(): array {
+        return ['editor', 'contributor', 'freelance'];
+    }
+
     public function setJob(string $job): self
     {
         $this->job = $job;

@@ -15,11 +15,10 @@ class AuthorType extends AbstractType
         $builder
             ->add('name')
             ->add('job', ChoiceType::class, [
-                'choices' => [
-                    'Editeur' => 'editor',
-                    'Contributeur' => 'contributor',
-                    'freelance' => 'freelance',
-                ],
+                'choices' => Author::getJobChoices(),
+                'choice_label' => function ($choiceValue, $key, $value){
+                return "author.entity.job_choices.$value";
+                }
             ])
             ->add('birth', null, [
                 'widget' => 'single_text',
@@ -31,6 +30,7 @@ class AuthorType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Author::class,
+            'label_format' =>'author.entity.%name%'
         ]);
     }
 }

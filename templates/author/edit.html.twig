@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Author{% endblock %}
+{% block title %}{{ 'author.edit.head-title' | trans }}{% endblock %}
 
 {% block body %}
-    <h1>Edit Author</h1>
+    <h1>{{ 'author.edit.title' | trans }}</h1>
 
     {{ include('author/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('author_index') }}">back to list</a>
+    <a href="{{ path('author_index') }}">
+        {{ 'author.edit.return' | trans }}
+    </a>
 
     {{ include('author/_delete_form.html.twig') }}
 {% endblock %}

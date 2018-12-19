@@ -1,43 +1,68 @@
 home:
   index:
-    head-title: UnfakeNews
+    head-title: Accueil | UnfakeNews
     title: Bienvenue sur UnfakeNews !
     lien1: Voir les articles du jour
     lien2: Ajouter un article
 
 article:
   index:
+    head-title: Articles du jour | UnfakeNews
     maj: dernière mise à jour
 
   show:
     edit: Editer l'article
 
+  create:
+    head-title: Nouvel article | UnfakeNews
+    add: Ajouter un nouvel auteur
+    save: Enregistrer
+
 author:
   index:
-    head-title: Author index
-    title: Author index
+    head-title: Auteurs index
+    title: Auteurs index
     id: Id
-    name: Name
-    job: Job
-    birth: Birth
+    name: Nom
+    job: Travail
+    birth: Naissance
     actions: Actions
     else: No records found
-    new: Create new
+    new: Créer un nouvel auteur
 
   show:
-    head-title: Author
-    title: Author
+    head-title: Fiche Auteur
+    title: Auteur
     id: Id
-    name: Name
-    job: Job
-    birth: Birth
+    name: Nom
+    job: Métier
+    birth: Date de naissance
     index: Retour à la liste
     edit: Editer
 
   new:
+    head-title: Nouvel Auteur | UnfakeNews
+    title: Ajouter un nouvel auteur
+    return: Retour à la liste des auteurs
 
   edit:
+    head-title: Modifier un auteur | UnfakeNews
+    title: Modifier un auteur
+    return: Retour à la liste des auteurs
 
   _form:
 
   _delete_form:
+
+  entity:
+    name: Nom
+    job: Métier
+    job_choices:
+      editor: Editeur
+      contributor: Contributeur
+      freelance: Freelance
+    birth: Date de naissance
+
+flash:
+  success:
+    article_created: J'ai un nouvel article avec l'id %id% !

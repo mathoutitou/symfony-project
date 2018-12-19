@@ -66,3 +66,8 @@ author:
 flash:
   success:
     article_created: J'ai un nouvel article avec l'id %id% !
+
+congratulator:
+  moderate: Merci un peu, %name%, c'était un moyen article
+  extra: WOW FABULOUS !!! $name% tu es vraiment le meilleur
+  crazy: YOU'RE FOCKIN GOD MATE PLZ CALL ME ASAP %name%

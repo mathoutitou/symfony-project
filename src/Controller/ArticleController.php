@@ -25,6 +25,7 @@ class ArticleController extends AbstractController
     {
         $articles = $repository->findLatest(10);
 
+
         return $this->render('article/index.html.twig', [
             'controller_name' => 'ArticleController',
             'articles' => $articles,

@@ -63,11 +63,20 @@ author:
       freelance: Freelance
     birth: Date de naissance
 
+user:
+  entity:
+    roles_choices:
+        ROLE_USER: Utilisateur
+        ROLE_ADMIN: Administrateur
+        ROLE_MODERATOR: Modérateur
+        ROLE_SUSCRIBER: Abonné
+
+
 flash:
   success:
     article_created: J'ai un nouvel article avec l'id %id% !
 
 congratulator:
   moderate: Merci un peu, %name%, c'était un moyen article
-  extra: WOW FABULOUS !!! $name% tu es vraiment le meilleur
+  extra: WOW FABULOUS !!! %name% tu es vraiment le meilleur
   crazy: YOU'RE FOCKIN GOD MATE PLZ CALL ME ASAP %name%

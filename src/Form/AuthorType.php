@@ -16,7 +16,7 @@ class AuthorType extends AbstractType
             ->add('name')
             ->add('job', ChoiceType::class, [
                 'choices' => Author::getJobChoices(),
-                'choice_label' => function ($choiceValue, $key, $value){
+                'choice_label' => function ($value){
                 return "author.entity.job_choices.$value";
                 }
             ])

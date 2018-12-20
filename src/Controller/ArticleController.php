@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use App\Utils\Congratulator;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,14 +23,17 @@ class ArticleController extends AbstractController
      * @param ArticleRepository $repository
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(ArticleRepository $repository)
+    public function index(ArticleRepository $repository, Congratulator $congratulator)
     {
+
+
         $articles = $repository->findLatest(10);
 
 
         return $this->render('article/index.html.twig', [
             'controller_name' => 'ArticleController',
             'articles' => $articles,
+            'congratulate' => $congratulator->thankSomeone()
         ]);
     }
 
@@ -36,6 +41,7 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/admin/article", name="article_new", methods={"GET", "POST"})
+     * @IsGranted("ROLE_ADMIN")
      * @param EntityManagerInterface $manager
      * @param TranslatorInterface $translator
      * @param Request $request

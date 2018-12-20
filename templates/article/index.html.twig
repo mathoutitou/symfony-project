@@ -6,7 +6,9 @@
     <a href="{{ path('article_new') }}">
         {{ 'home.index.lien2' | trans }}
     </a>
-
+    <div>
+        {{ congratulate }}
+    </div>
     {% for article in articles %}
         <div class="article">
             <h2>

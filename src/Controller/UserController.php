@@ -57,7 +57,11 @@ class UserController extends AbstractController
      */
     public function edit(Request $request, User $user): Response
     {
-        $form = $this->createForm(UserType::class, $user);
+        $this->denyAccessUnlessGranted('USER_EDIT', $user);
+
+        $form = $this->createForm(UserType::class, $user, [
+            'method' => 'PUT',
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

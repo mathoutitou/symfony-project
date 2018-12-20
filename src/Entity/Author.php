@@ -38,6 +38,11 @@ class Author
      */
     private $articles;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "remove"})
+     */
+    private $user;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -115,6 +120,18 @@ class Author
                 $article->setAuthor(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

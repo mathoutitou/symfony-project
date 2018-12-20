@@ -11,6 +11,11 @@
     <a href="{{ path('home') }}">Accueil</a>
     <a href="{{ path('article') }}">Articles</a>
     <a href="{{ path('author_index') }}">Auteurs</a>
+    {% if is_granted('ROLE_USER') == false %}
+        <a href="{{ path('app_login') }}">Connexion</a>
+    {% else %}
+        <a href="{{ path('logout') }}">Déconnexion</a>
+    {% endif %}
 </nav>
 
 {% for category, messages in app.flashes %}

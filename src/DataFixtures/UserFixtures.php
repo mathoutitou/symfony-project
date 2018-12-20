@@ -21,8 +21,8 @@ class UserFixtures extends Fixture
         $bob = new User();
         $bob
             ->setEmail('bob@gmail.com')
-            ->setPassword($this->encoder->encodePassword($bob, 'obo'));
-            //->setRoles('admin');
+            ->setPassword($this->encoder->encodePassword($bob, 'obo'))
+            ->setRoles(['ROLE_ADMIN']);
 
         $manager->persist($bob);
         $this->addReference('admin-bob', $bob);
